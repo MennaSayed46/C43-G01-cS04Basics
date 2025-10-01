@@ -102,16 +102,45 @@ namespace Demo
             #region Question03
             //3 - Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
 
-                ///static void sumSubstract(int a , int b , out int sum , out int substract)
-                ///{
-                ///    sum = a + b;
-                ///    substract = a - b;
-                ///}
+            ///static void sumSubstract(int a , int b , out int sum , out int substract)
+            ///{
+            ///    sum = a + b;
+            ///    substract = a - b;
+            ///}
 
-                ///int sumResult, substractResult;
-                ///sumSubstract(10, 5, out sumResult, out substractResult);
-                ///Console.WriteLine($"the sum of 10 + 5 ={sumResult}");
-                ///Console.WriteLine($"the substract of 10 - 5 = {substractResult}");
+            ///int sumResult, substractResult;
+            ///sumSubstract(10, 5, out sumResult, out substractResult);
+            ///Console.WriteLine($"the sum of 10 + 5 ={sumResult}");
+            ///Console.WriteLine($"the substract of 10 - 5 = {substractResult}");
+            #endregion
+
+            #region Question04
+                /// 4 - Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+                ///Output should be like
+                ///Enter a number: 25
+                ///The sum of the digits of the number 25 is: 7
+                ///
+
+                      //static int sumOfDigits(int number)
+                      //{
+                      //  int sum = 0;
+                      //  while (number > 0)
+                      //  {
+                      //      int digit = number % 10;
+                      //      sum += digit;
+                      //      number /= 10;
+                      //  }
+                      //  return sum;
+
+                      //}
+
+                      //  Console.Write("Enter a number: ");
+                      //  int.TryParse(Console.ReadLine(), out int number);
+                      //  int result = sumOfDigits(number);
+                      //   Console.WriteLine($"The sum of the digits of the number {number} is: {result}");
+
+
+
             #endregion
         }
     }
