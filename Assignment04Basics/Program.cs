@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.IO.Pipelines;
+using System.Reflection.Metadata;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -170,35 +171,70 @@ namespace Demo
 
             #region Question06
             //6 - Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
-                //static void MinMaxArray(int[] arr , out int min ,out int max)
-                //{
-                //    if(arr is not null)
-                //    {
-                //         min = arr[0];
-                //         max = arr[0];
-                //        for(int i =1; i<arr.Length; i++)
-                //        {
-                //            if (arr[i]<min)
-                //                min = arr[i];
-                //            if (arr[i]>max)
-                //                max = arr[i];
-                //        }
+            //static void MinMaxArray(int[] arr , out int min ,out int max)
+            //{
+            //    if(arr is not null)
+            //    {
+            //         min = arr[0];
+            //         max = arr[0];
+            //        for(int i =1; i<arr.Length; i++)
+            //        {
+            //            if (arr[i]<min)
+            //                min = arr[i];
+            //            if (arr[i]>max)
+            //                max = arr[i];
+            //        }
 
-                //    }
+            //    }
+            //    else
+            //    {
+            //        min = 0;
+            //        max = 0;
+            //        Console.WriteLine("enter a valid values of the array");
+            //    }
+            //}
+
+            //int[] numbers = { -1, 0, 1, 2, 3, 4, 5};
+            //int min, max;
+            //MinMaxArray(numbers, out min, out max);
+            //Console.WriteLine($"the minimum number in the array is : {min}");
+            //Console.WriteLine($"the maximum number in the array is : {max}");
+
+
+            #endregion
+
+            #region Question07
+            //7 - Create an iterative(non-recursive) function to calculate the factorial of the number specified as parameter
+                //static long Factorial(int number)
+                //{
+                //    int mul = 1;
+                //    if (number<0)
+                //        return -1;
+                //    else if(number == 0)
+                //        return 1;
                 //    else
                 //    {
-                //        min = 0;
-                //        max = 0;
-                //        Console.WriteLine("enter a valid values of the array");
+                //        while (number >= 1)
+                //        {
+                       
+                //            mul*= number;
+                //            number--;
+                //        }
+                //        return mul;
                 //    }
                 //}
 
-                //int[] numbers = { -1, 0, 1, 2, 3, 4, 5};
-                //int min, max;
-                //MinMaxArray(numbers, out min, out max);
-                //Console.WriteLine($"the minimum number in the array is : {min}");
-                //Console.WriteLine($"the maximum number in the array is : {max}");
-
+                //Console.Write("Please enter a number : ");
+                //int.TryParse(Console.ReadLine(), out int number);
+                //long factorial = Factorial(number);
+                //string msg = factorial switch
+                //{
+                //    -1 => "factorial is not defined for negative numbers",
+                //    1 => "the factorial of 0 is 1",
+                //    _ => $"the factorial of {number} is {factorial}"
+                //};
+                //Console.WriteLine(msg);
+            
 
             #endregion
         }
