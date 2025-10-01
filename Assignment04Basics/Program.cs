@@ -150,7 +150,7 @@ namespace Demo
             //5 - Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
             //static bool Isprime(int number)
             //{
-                
+
             //    if(number<=1)
             //        return false;
             //    for(int i =2; i<=Math.Sqrt(number); i++)
@@ -166,6 +166,40 @@ namespace Demo
             //    Console.WriteLine($"the number = {number} : is a prime number");
             //else
             //    Console.WriteLine($"the number = {number} : is not a prime number");
+            #endregion
+
+            #region Question06
+            //6 - Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
+                //static void MinMaxArray(int[] arr , out int min ,out int max)
+                //{
+                //    if(arr is not null)
+                //    {
+                //         min = arr[0];
+                //         max = arr[0];
+                //        for(int i =1; i<arr.Length; i++)
+                //        {
+                //            if (arr[i]<min)
+                //                min = arr[i];
+                //            if (arr[i]>max)
+                //                max = arr[i];
+                //        }
+
+                //    }
+                //    else
+                //    {
+                //        min = 0;
+                //        max = 0;
+                //        Console.WriteLine("enter a valid values of the array");
+                //    }
+                //}
+
+                //int[] numbers = { -1, 0, 1, 2, 3, 4, 5};
+                //int min, max;
+                //MinMaxArray(numbers, out min, out max);
+                //Console.WriteLine($"the minimum number in the array is : {min}");
+                //Console.WriteLine($"the maximum number in the array is : {max}");
+
+
             #endregion
         }
     }
