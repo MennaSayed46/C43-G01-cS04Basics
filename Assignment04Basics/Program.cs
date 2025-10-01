@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Buffers.Text;
+using System.ComponentModel;
 using System.IO.Pipelines;
 using System.Reflection.Metadata;
 using System.Xml.Linq;
@@ -205,37 +206,65 @@ namespace Demo
 
             #region Question07
             //7 - Create an iterative(non-recursive) function to calculate the factorial of the number specified as parameter
-                //static long Factorial(int number)
+            //static long Factorial(int number)
+            //{
+            //    int mul = 1;
+            //    if (number<0)
+            //        return -1;
+            //    else if(number == 0)
+            //        return 1;
+            //    else
+            //    {
+            //        while (number >= 1)
+            //        {
+
+            //            mul*= number;
+            //            number--;
+            //        }
+            //        return mul;
+            //    }
+            //}
+
+            //Console.Write("Please enter a number : ");
+            //int.TryParse(Console.ReadLine(), out int number);
+            //long factorial = Factorial(number);
+            //string msg = factorial switch
+            //{
+            //    -1 => "factorial is not defined for negative numbers",
+            //    1 => "the factorial of 0 is 1",
+            //    _ => $"the factorial of {number} is {factorial}"
+            //};
+            //Console.WriteLine(msg);
+
+
+            #endregion
+
+            #region Question08
+            //8 - Create a function named "ChangeChar" to modify a letter in a certain position(0 based) of a string, replacing it with a different letter
+                //static string changeChar(string element , int position , char c)
                 //{
-                //    int mul = 1;
-                //    if (number<0)
-                //        return -1;
-                //    else if(number == 0)
-                //        return 1;
-                //    else
+                //    if(element is null)
+                //        return "enter a valid string";
+                //    if(position>=0 || position < element.Length)
                 //    {
-                //        while (number >= 1)
-                //        {
-                       
-                //            mul*= number;
-                //            number--;
-                //        }
-                //        return mul;
+                //        char[] chars = element.ToCharArray();
+                //        chars[position] = c;
+                //        return new string(chars);
                 //    }
+
+                //    return "enter a valid position";
+
                 //}
 
-                //Console.Write("Please enter a number : ");
-                //int.TryParse(Console.ReadLine(), out int number);
-                //long factorial = Factorial(number);
-                //string msg = factorial switch
-                //{
-                //    -1 => "factorial is not defined for negative numbers",
-                //    1 => "the factorial of 0 is 1",
-                //    _ => $"the factorial of {number} is {factorial}"
-                //};
-                //Console.WriteLine(msg);
-            
-
+                //Console.Write("Please enter a string : ");
+                //string? element = Console.ReadLine() ?? null;
+                //Console.Write("enter the position : ");
+                //int.TryParse(Console.ReadLine(), out int position);
+                //Console.Write("enter the char : ");
+                //char.TryParse(Console.ReadLine(), out char c);
+                //Console.WriteLine($"the string before we call the function : {element}");
+                //string result = changeChar(element, position, c);
+                //Console.WriteLine($"the string after we call the function : {result}");
             #endregion
         }
     }
