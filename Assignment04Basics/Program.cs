@@ -98,6 +98,21 @@ namespace Demo
 
             #endregion
             #endregion
+
+            #region Question03
+            //3 - Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
+
+                ///static void sumSubstract(int a , int b , out int sum , out int substract)
+                ///{
+                ///    sum = a + b;
+                ///    substract = a - b;
+                ///}
+
+                ///int sumResult, substractResult;
+                ///sumSubstract(10, 5, out sumResult, out substractResult);
+                ///Console.WriteLine($"the sum of 10 + 5 ={sumResult}");
+                ///Console.WriteLine($"the substract of 10 - 5 = {substractResult}");
+            #endregion
         }
     }
 }
