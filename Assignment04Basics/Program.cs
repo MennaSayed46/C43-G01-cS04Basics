@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel;
+using System.IO.Pipelines;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Demo
 {
@@ -115,32 +118,54 @@ namespace Demo
             #endregion
 
             #region Question04
-                /// 4 - Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
-                ///Output should be like
-                ///Enter a number: 25
-                ///The sum of the digits of the number 25 is: 7
-                ///
+            /// 4 - Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+            ///Output should be like
+            ///Enter a number: 25
+            ///The sum of the digits of the number 25 is: 7
+            ///
 
-                      //static int sumOfDigits(int number)
-                      //{
-                      //  int sum = 0;
-                      //  while (number > 0)
-                      //  {
-                      //      int digit = number % 10;
-                      //      sum += digit;
-                      //      number /= 10;
-                      //  }
-                      //  return sum;
+            //static int sumOfDigits(int number)
+            //{
+            //  int sum = 0;
+            //  while (number > 0)
+            //  {
+            //      int digit = number % 10;
+            //      sum += digit;
+            //      number /= 10;
+            //  }
+            //  return sum;
 
-                      //}
+            //}
 
-                      //  Console.Write("Enter a number: ");
-                      //  int.TryParse(Console.ReadLine(), out int number);
-                      //  int result = sumOfDigits(number);
-                      //   Console.WriteLine($"The sum of the digits of the number {number} is: {result}");
+            //  Console.Write("Enter a number: ");
+            //  int.TryParse(Console.ReadLine(), out int number);
+            //  int result = sumOfDigits(number);
+            //   Console.WriteLine($"The sum of the digits of the number {number} is: {result}");
 
 
 
+            #endregion
+
+            #region Question05
+            //5 - Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
+            //static bool Isprime(int number)
+            //{
+                
+            //    if(number<=1)
+            //        return false;
+            //    for(int i =2; i<=Math.Sqrt(number); i++)
+            //        if(number%i ==0)
+            //            return false;
+            //    return true;
+            //}
+
+            //Console.Write("Please enter a number : ");
+            //int.TryParse(Console.ReadLine(), out int number);
+            //bool result = Isprime(number);
+            //if(result)
+            //    Console.WriteLine($"the number = {number} : is a prime number");
+            //else
+            //    Console.WriteLine($"the number = {number} : is not a prime number");
             #endregion
         }
     }
