@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using System.ComponentModel;
+
+namespace Demo
 {
     internal class Program
 
@@ -48,6 +50,53 @@
             ///Console.WriteLine($"after the swapping :\n A={A} \n B={B}");
 
 
+            #endregion
+
+            #region Question02
+            //2 - Explain the difference between passing(Reference type parameters) by value and by reference then write a suitable c# example
+            #region passing by value
+            ///   The method receives a copy of the reference (the address of the object).
+            ///   This means you can modify the object’s contents (e.g., array elements),
+            ///   but if you reassign the reference to a new object, the original variable
+            ///  outside the method will NOT be affected.
+            ///static int SumArray(int[] arr)
+            ///{
+            ///    int sum = 0;
+            ///    arr[0] = 100; //this will affect the original array.
+            ///    if (arr is not null)
+            ///        for(int i =0; i<arr.Length; i++)
+            ///            sum+=arr[i];
+            ///    return sum;
+            ///}
+            ///
+            ///int[] numbers = { 1, 2, 3 };
+            ///Console.WriteLine($"before the sumArr \n numbers[0] ={numbers[0]}"); //1
+            ///int result = SumArray(numbers);
+            ///Console.WriteLine($"after the sumArray \n numbers[0] = {numbers[0]}");  //100
+            ///Console.WriteLine($"the sum of the aarray is : {result}");
+            #endregion
+
+            #region Passing by refernce
+            /// - Passing a reference type by Reference (using ref keyword):
+            ///   The method receives the actual reference itself, not just a copy.
+            ///   This means both modifying the object’s contents AND reassigning the reference
+            ///   will directly affect the original variable outside the method.
+            /// static int SumArray(int[] arr)
+            /// {
+            ///    int sum = 0;
+            ///    arr = new int[] { 4,5,6}; //this do not affect the original array.
+            ///if (arr is not null)
+            ///        for (int i = 0; i < arr.Length; i++)
+            ///            sum += arr[i];
+            ///    return sum;
+            /// }
+            ///int[] numbers = { 1, 2, 3 };
+            ///Console.WriteLine($"before the sumArr \n numbers[0] ={numbers[0]}"); //1
+            ///int result = SumArray(numbers); //15
+            ///Console.WriteLine($"after the sumArray \n numbers[0] = {numbers[0]}");  //1
+            ///Console.WriteLine($"the sum of the aarray is : {result}");  //15
+
+            #endregion
             #endregion
         }
     }
