@@ -1,10 +1,271 @@
-﻿namespace Assignment04Basics
+﻿using System.Buffers.Text;
+using System.ComponentModel;
+using System.IO.Pipelines;
+using System.Reflection.Metadata;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Demo
 {
     internal class Program
+
     {
+    
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            #region Question01
+            //1 - Explain the difference between passing(Value type parameters) by value and by reference then write a suitable c# example.
+            #region Passing by value
+            //   A copy of the variable’s value is passed into the method.
+            //   Any changes inside the method do NOT affect the original variable.
+            #endregion
+            #region passing by reference
+            //The method receives the actual memory address of the variable. Any changes inside the method directly affect the original variable.
+            #endregion
+
+            ///passing by value example :
+            ///static void Swap(int x, int y)
+            ///{
+            ///    Console.WriteLine("swapping");
+            ///    int temp;
+            ///    temp = x;
+            ///    x = y;
+            ///    y = temp;
+            ///}
+            ///int A = 3;
+            ///int B = 5;
+            ///Console.WriteLine($"before the swapping :\n A={A} \n B={B}");
+            ///Swap(A, B);
+            ///    Console.WriteLine($"after the swapping :\n A={A} \n B={B}");
+            ///    
+
+            ///passing by reference example :
+            ///static void Swap(ref int x, ref int y)
+            ///{
+            ///    Console.WriteLine("swapping");
+            ///    int temp;
+            ///    temp = x;
+            ///    x = y;
+            ///    y = temp;
+            ///}
+            ///int A = 3;
+            ///int B = 5;
+            ///Console.WriteLine($"before the swapping :\n A={A} \n B={B}");
+            ///Swap(ref A, ref B);
+            ///Console.WriteLine($"after the swapping :\n A={A} \n B={B}");
+
+
+            #endregion
+
+            #region Question02
+            //2 - Explain the difference between passing(Reference type parameters) by value and by reference then write a suitable c# example
+            #region passing by value
+            ///   The method receives a copy of the reference (the address of the object).
+            ///   This means you can modify the object’s contents (e.g., array elements),
+            ///   but if you reassign the reference to a new object, the original variable
+            ///  outside the method will NOT be affected.
+            ///static int SumArray(int[] arr)
+            ///{
+            ///    int sum = 0;
+            ///    arr[0] = 100; //this will affect the original array.
+            ///    if (arr is not null)
+            ///        for(int i =0; i<arr.Length; i++)
+            ///            sum+=arr[i];
+            ///    return sum;
+            ///}
+            ///
+            ///int[] numbers = { 1, 2, 3 };
+            ///Console.WriteLine($"before the sumArr \n numbers[0] ={numbers[0]}"); //1
+            ///int result = SumArray(numbers);
+            ///Console.WriteLine($"after the sumArray \n numbers[0] = {numbers[0]}");  //100
+            ///Console.WriteLine($"the sum of the aarray is : {result}");
+            #endregion
+
+            #region Passing by refernce
+            /// - Passing a reference type by Reference (using ref keyword):
+            ///   The method receives the actual reference itself, not just a copy.
+            ///   This means both modifying the object’s contents AND reassigning the reference
+            ///   will directly affect the original variable outside the method.
+            /// static int SumArray(int[] arr)
+            /// {
+            ///    int sum = 0;
+            ///    arr = new int[] { 4,5,6}; //this do not affect the original array.
+            ///if (arr is not null)
+            ///        for (int i = 0; i < arr.Length; i++)
+            ///            sum += arr[i];
+            ///    return sum;
+            /// }
+            ///int[] numbers = { 1, 2, 3 };
+            ///Console.WriteLine($"before the sumArr \n numbers[0] ={numbers[0]}"); //1
+            ///int result = SumArray(numbers); //15
+            ///Console.WriteLine($"after the sumArray \n numbers[0] = {numbers[0]}");  //1
+            ///Console.WriteLine($"the sum of the aarray is : {result}");  //15
+
+            #endregion
+            #endregion
+
+            #region Question03
+            //3 - Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
+
+            ///static void sumSubstract(int a , int b , out int sum , out int substract)
+            ///{
+            ///    sum = a + b;
+            ///    substract = a - b;
+            ///}
+
+            ///int sumResult, substractResult;
+            ///sumSubstract(10, 5, out sumResult, out substractResult);
+            ///Console.WriteLine($"the sum of 10 + 5 ={sumResult}");
+            ///Console.WriteLine($"the substract of 10 - 5 = {substractResult}");
+            #endregion
+
+            #region Question04
+            /// 4 - Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+            ///Output should be like
+            ///Enter a number: 25
+            ///The sum of the digits of the number 25 is: 7
+            ///
+
+            //static int sumOfDigits(int number)
+            //{
+            //  int sum = 0;
+            //  while (number > 0)
+            //  {
+            //      int digit = number % 10;
+            //      sum += digit;
+            //      number /= 10;
+            //  }
+            //  return sum;
+
+            //}
+
+            //  Console.Write("Enter a number: ");
+            //  int.TryParse(Console.ReadLine(), out int number);
+            //  int result = sumOfDigits(number);
+            //   Console.WriteLine($"The sum of the digits of the number {number} is: {result}");
+
+
+
+            #endregion
+
+            #region Question05
+            //5 - Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
+            //static bool Isprime(int number)
+            //{
+
+            //    if(number<=1)
+            //        return false;
+            //    for(int i =2; i<=Math.Sqrt(number); i++)
+            //        if(number%i ==0)
+            //            return false;
+            //    return true;
+            //}
+
+            //Console.Write("Please enter a number : ");
+            //int.TryParse(Console.ReadLine(), out int number);
+            //bool result = Isprime(number);
+            //if(result)
+            //    Console.WriteLine($"the number = {number} : is a prime number");
+            //else
+            //    Console.WriteLine($"the number = {number} : is not a prime number");
+            #endregion
+
+            #region Question06
+            //6 - Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
+            //static void MinMaxArray(int[] arr , out int min ,out int max)
+            //{
+            //    if(arr is not null)
+            //    {
+            //         min = arr[0];
+            //         max = arr[0];
+            //        for(int i =1; i<arr.Length; i++)
+            //        {
+            //            if (arr[i]<min)
+            //                min = arr[i];
+            //            if (arr[i]>max)
+            //                max = arr[i];
+            //        }
+
+            //    }
+            //    else
+            //    {
+            //        min = 0;
+            //        max = 0;
+            //        Console.WriteLine("enter a valid values of the array");
+            //    }
+            //}
+
+            //int[] numbers = { -1, 0, 1, 2, 3, 4, 5};
+            //int min, max;
+            //MinMaxArray(numbers, out min, out max);
+            //Console.WriteLine($"the minimum number in the array is : {min}");
+            //Console.WriteLine($"the maximum number in the array is : {max}");
+
+
+            #endregion
+
+            #region Question07
+            //7 - Create an iterative(non-recursive) function to calculate the factorial of the number specified as parameter
+            //static long Factorial(int number)
+            //{
+            //    int mul = 1;
+            //    if (number<0)
+            //        return -1;
+            //    else if(number == 0)
+            //        return 1;
+            //    else
+            //    {
+            //        while (number >= 1)
+            //        {
+
+            //            mul*= number;
+            //            number--;
+            //        }
+            //        return mul;
+            //    }
+            //}
+
+            //Console.Write("Please enter a number : ");
+            //int.TryParse(Console.ReadLine(), out int number);
+            //long factorial = Factorial(number);
+            //string msg = factorial switch
+            //{
+            //    -1 => "factorial is not defined for negative numbers",
+            //    1 => "the factorial of 0 is 1",
+            //    _ => $"the factorial of {number} is {factorial}"
+            //};
+            //Console.WriteLine(msg);
+
+
+            #endregion
+
+            #region Question08
+            //8 - Create a function named "ChangeChar" to modify a letter in a certain position(0 based) of a string, replacing it with a different letter
+                //static string changeChar(string element , int position , char c)
+                //{
+                //    if(element is null)
+                //        return "enter a valid string";
+                //    if(position>=0 || position < element.Length)
+                //    {
+                //        char[] chars = element.ToCharArray();
+                //        chars[position] = c;
+                //        return new string(chars);
+                //    }
+
+                //    return "enter a valid position";
+
+                //}
+
+                //Console.Write("Please enter a string : ");
+                //string? element = Console.ReadLine() ?? null;
+                //Console.Write("enter the position : ");
+                //int.TryParse(Console.ReadLine(), out int position);
+                //Console.Write("enter the char : ");
+                //char.TryParse(Console.ReadLine(), out char c);
+                //Console.WriteLine($"the string before we call the function : {element}");
+                //string result = changeChar(element, position, c);
+                //Console.WriteLine($"the string after we call the function : {result}");
+            #endregion
         }
     }
 }
